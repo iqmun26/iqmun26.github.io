@@ -60,7 +60,7 @@ section.on{display:block}
 .cd b{display:block;font:500 clamp(1.6rem,4vw,2.4rem)/1 'Bodoni Moda',serif;color:var(--gold)}
 .cd span{font-family:'Cormorant Garamond',serif;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ant)}
 .btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative}
-.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;margin-top:5rem;border-top:1px solid var(--line)}
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:0;margin-top:5rem;border-top:1px solid var(--line)}
 .three div{padding:2.4rem 1.6rem;text-align:center;border-right:1px solid var(--line)}
 .three div:last-child{border:0}
 .three h3{font-size:1.2rem;text-transform:uppercase;margin-bottom:.6rem}
@@ -75,7 +75,7 @@ section.on{display:block}
 .gl b{color:var(--gold);font-weight:500}
 .center{text-align:center}
 /* committees */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.6rem}
 .card{border:1px solid var(--line);padding:2rem 1.8rem 1.8rem;position:relative;background:linear-gradient(160deg,rgba(255,255,255,.035),transparent);transition:.4s;overflow:hidden}
 .card:before{content:"";position:absolute;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--red2),var(--ant),transparent)}
 .card:hover{transform:translateY(-6px);border-color:var(--ant);box-shadow:0 20px 40px rgba(0,0,0,.45)}
@@ -95,7 +95,7 @@ section.on{display:block}
 .acc p{max-height:0;overflow:hidden;transition:max-height .5s,padding .5s}
 .acc .o p{max-height:300px;padding-bottom:1.4rem}
 /* register */
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2rem}
 .reg{border:1px solid var(--ant);padding:3rem 2.2rem;text-align:center;position:relative;outline:1px solid var(--line);outline-offset:8px;margin:8px}
 .reg .rn{font:500 2.4rem/1 'Bodoni Moda',serif;color:var(--red2)}
 .reg h3{font-size:1.35rem;text-transform:uppercase;margin:.8rem 0}
@@ -116,7 +116,7 @@ section.on{display:block}
 .ev.s h4{font-size:1.25rem}.ev.s:after{color:var(--red2);font-size:1.1rem;left:151px}
 .ev.b h4{font:italic 400 1.1rem 'Cormorant Garamond',serif;color:var(--cream);opacity:.75}
 /* dress */
-.dress{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.dress{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2rem}
 .dress>div{padding:2.4rem;border:1px solid var(--line)}
 .dress h3{text-transform:uppercase;margin-bottom:1.2rem;font-size:1.2rem}
 .dress li{list-style:none;padding:.5rem 0;border-bottom:1px dotted var(--line)}
@@ -127,6 +127,55 @@ footer{margin-top:5rem;padding:3rem 6vw 2.5rem;text-align:center;border-top:1px 
 footer .big{font:500 1.3rem 'Bodoni Moda',serif;letter-spacing:.3em;color:var(--gold);margin-bottom:.6rem}
 footer a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--ant)}
 @media(max-width:700px){nav{flex-direction:column;align-items:flex-start;gap:.5rem;padding:1rem 5vw 1.8rem}.tabs{max-width:100%;gap:1.4rem}.step{grid-template-columns:50px 1fr;gap:.8rem}.tl:before{left:92px}.ev{grid-template-columns:76px 1fr;gap:34px}.ev:after{left:86px}.ev.s:after{left:83px}.three div{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* ===== RESPONSIVE ===== */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;overflow-x:hidden}
+img,svg{max-width:100%}
+.grid>*,.two>*,.dress>*{min-width:0}
+@media(min-width:1500px){body{font-size:18px}section{max-width:1300px}}
+@media(max-width:900px){
+ nav{padding:1.1rem 4vw 2.2rem}.tabs{gap:1.4rem}
+ section{padding:2rem 5vw 1.5rem}
+ .tl{max-width:560px}.step{grid-template-columns:70px 1fr}
+ .hero{min-height:70vh}
+}
+@media(max-width:600px){
+ body{font-size:15.5px;line-height:1.6}
+ nav{flex-direction:column;align-items:center;gap:.4rem;padding:.9rem 0 1.7rem}
+ .brand{font-size:.85rem}
+ .tabs{max-width:100%;width:100%;gap:1.25rem;padding:0 6vw 1rem;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+ .tabs button{font-size:.62rem;letter-spacing:.2em}
+ .tabs button.cta{padding:.4rem .8rem}
+ section{padding:1.2rem 6vw 1rem}
+ .head{margin-bottom:2rem}.head h2{font-size:1.45rem;letter-spacing:.05em}.head p{font-size:1rem}
+ .cap{letter-spacing:.2em;font-size:.66rem}
+ .hero{min-height:auto;padding:1.5rem 0 1rem}
+ .hero h1{font-size:17vw}
+ .orbit{width:132%}
+ .ttl+.cap{margin-top:1.2rem;line-height:1.9}
+ .pill{gap:.4rem;margin:.9rem 0 1.4rem}
+ .tag{font-size:1.05rem;padding:0 .5rem}
+ .cd{gap:.7rem;margin:1.6rem 0 1.2rem}.cd div{min-width:58px}.cd b{font-size:1.7rem}.cd span{font-size:.58rem;letter-spacing:.2em}
+ .btns{flex-direction:column;align-items:center;width:100%}.btns .btn{width:min(100%,260px);text-align:center}
+ .btn{padding:.8rem 1.2rem;font-size:.72rem;letter-spacing:.2em}
+ .three{margin-top:2.5rem}.three div{padding:1.6rem 1rem}
+ .lead{font-size:1.1rem;margin-bottom:2rem}
+ .step{grid-template-columns:44px 1fr;gap:.6rem;padding:1.2rem 0}.step:before{font-size:1.3rem}.step h3{font-size:1rem}
+ .gl{gap:.5rem}.gl span{font-size:.85rem;padding:.3rem .7rem}
+ .card{padding:1.6rem 1.3rem}.card h3{font-size:1.15rem}
+ .acc button{font-size:.9rem;padding:1.1rem 0}
+ .reg{padding:2.2rem 1.4rem;margin:12px}.reg .rn{font-size:2rem}.reg h3{font-size:1.2rem}
+ .note{font-size:.9rem;line-height:1.9}
+ .dt{gap:.4rem;margin-bottom:2rem}.dt button{flex:1;padding:.7rem .4rem;font-size:.72rem;letter-spacing:.15em}
+ .tl:before{left:7px}
+ .ev{display:block;padding:.8rem 0 .8rem 32px}
+ .ev:after{left:0;top:1rem}.ev.s:after{left:-2px;top:.9rem}
+ .ev .t{text-align:left;font-size:.85rem;margin-bottom:.1rem}
+ .ev h4,.ev.s h4{font-size:1.05rem}.ev.b h4{font-size:1rem}
+ .dress>div{padding:1.6rem 1.3rem}.dress h3{font-size:1.05rem}
+ footer{margin-top:3rem;padding:2rem 6vw 1.8rem}footer .big{font-size:1.1rem}
+}
+@media(max-width:360px){body{font-size:14.5px}.hero h1{font-size:16vw}.cd div{min-width:50px}.tabs button{letter-spacing:.14em}}
 </style></head><body>
 <nav><div class="brand" onclick="go('home')">IQMUN<i>✦</i></div><div class="tabs" id="tabs"></div></nav>
 
